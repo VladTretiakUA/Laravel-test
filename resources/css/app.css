@@ -1,0 +1,196 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color:bisque;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    transition: all 500ms ease;
+    color: #6f6f6f;
+}
+
+a:hover {
+    color: #1f1f1f;
+}
+
+.container {
+    width: 1258px;
+    margin: 0 auto;
+}
+
+header.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+header form {
+    display: inline-block;
+}
+
+header form button {
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 600ms ease;
+}
+
+header form button:hover {
+    transform: scale(1.1);
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 25px;
+    color: #222;
+}
+
+header nav a {
+    margin-left: 15px;
+}
+
+.presentation img {
+    width: 100%;
+    height: 500px;
+    background-blend-mode: multiply;
+    background-color: #6f6f6f;
+}
+
+.presentation {
+    position: relative;
+}
+
+.presentation::before {
+    content: "Новини зі всього світу";
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    color: black;
+    font-size: 60px;
+    font-weight: 600;
+    width: 300px;
+}
+
+nav span {
+    font-size: 25px;
+}
+
+nav a{
+    font-size: 25px;
+}
+
+nav div {
+    font-size: 15px;
+}
+
+.articles {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.articles .post {
+    width: 27%;
+    padding: 20px;
+    background: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.articles .post img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.articles.one .post {
+    width: 100%;
+    border: 1px solid silver;
+    border-bottom-width: 2px;
+}
+
+.art, 
+.back-button,
+header form button {
+    display: inline-block;
+    margin-top: 15px;
+    background: #bebebe;
+    border-radius: 5px;
+    padding: 10px 12px;
+    color: aliceblue;
+    transition: all 600ms ease;
+    font-weight: 600;
+    font-size: 16px;
+    
+}
+
+.art:hover, .back-button:hover {
+    transform: scale(1.05);
+}
+
+.article-form {
+    margin-top: 20px;
+
+}
+
+.article-form label {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.article-form input,
+.article-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-size: 14px;
+}
+
+.article-form input[type='submit'] {
+    margin-top: 20px;
+    background: #d45858;
+    cursor: pointer;
+    width: 150px;
+    color: #fff;
+    border: 0;
+    transition: all 600ms ease;
+}
+
+.article-form input[type='submit']:hover {
+    transform: scale(1.05);
+    background-color: #a63f3f;
+    width: 160px;
+}
+
+
+
+.error-mess, .success-mess {
+    padding: 15px 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.error-mess {
+    background-color: #d45858;
+}
+
+.success-mess {
+    background-color: #6ab05a;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
