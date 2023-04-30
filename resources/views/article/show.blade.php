@@ -9,9 +9,17 @@
     <div class="articles one">
            <div class="post">
                 <img src="/storage/img/articles/{{ $article->image }}" alt="">
-                <h2> {{ $article->title }} </h2>
+
+                <h2> {{ $article->title }} </h2><br>
+                <h3>Тег:  {{ $article->article_tag }} </h3><br>
+
+                <h2> @php
+                    $a = $article->article_tag ;
+                    echo preg_replace('/(\w| )(' . $a . ')\w+/iu', '<a href=\"' . '/article/{id}' . '\">\\0</a>', $article->text);
+                  @endphp </h2>
+
                 <p><b>Автор: {{ $article->user->name }}</b></p>
-                <p> {!! $article->text !!}</p>
+                <p> {{ $article->text }}</p>
                   
                 @auth
                     @if(Auth::user()->id == $article->user_id)

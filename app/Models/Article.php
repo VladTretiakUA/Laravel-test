@@ -14,4 +14,9 @@ class Article extends Model
     {
         return $this->belongsTo('App\Models\User'); //вказує що 1 стаття має 1 автора
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Models\Tag')->withTimestamps(); //вказує що 1 стаття має багато тегів
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 
 class ArticlesController extends Controller
@@ -16,6 +17,7 @@ class ArticlesController extends Controller
 
     public function create()
     {
+
         return view('article/create');
     }
 
@@ -44,6 +46,11 @@ class ArticlesController extends Controller
         $article->title = $request->input('title');
         $article->anons = $request->input('anons');
         $article->text = $request->input('text');
+        $article->article_tag = $request->input('article_tag');
+        // if ($request->hasAny('article_tag')  == Article::pluck('article_tag')) {
+        //     return session('error', 'Такий тег існує');
+        // }
+
         $article->user_id = auth()->user()->id;
         $article->image = $image_name;
         $article->save();
@@ -92,6 +99,8 @@ class ArticlesController extends Controller
         $article->title = $request->input('title');
         $article->anons = $request->input('anons');
         $article->text = $request->input('text');
+
+        $article->article_tag = $request->input('article_tag');
         $article->user_id = auth()->user()->id; //name, email
 
         if ($request->hasFile('main_image')) {
